@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caso: Rediseñar un onboarding fintech — Santiago Arraz</title>
+  <meta name="description" content="Caso de estudio: el razonamiento completo detrás del rediseño de un onboarding que perdía al 68% de los usuarios.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a href="index.html" class="nav__logo">Santiago Arraz</a>
+    <nav class="nav__links">
+      <a href="index.html#pensamiento">Cómo pienso</a>
+      <a href="index.html#casos">Casos</a>
+      <a href="index.html#sobre-mi">Sobre mí</a>
+    </nav>
+    <a href="index.html#contacto" class="btn btn--dark btn--sm">Trabajemos juntos</a>
+  </header>
+
+  <!-- ============ HERO DEL CASO ============ -->
+  <section class="case-hero">
+    <div class="case__meta reveal">
+      <span class="tag">Fintech</span>
+      <span class="tag">B2C</span>
+      <span class="tag">Product Design + PM</span>
+    </div>
+    <h1 class="reveal">Rediseñar un onboarding que perdía al <em>68%</em> de los usuarios</h1>
+    <p class="case-hero__intro reveal">
+      Este caso no es sobre las pantallas que diseñé. Es sobre una decisión incómoda:
+      aceptar más riesgo de fraude a cambio de que más personas llegaran a probar el producto.
+    </p>
+  </section>
+
+  <div class="case-summary reveal">
+    <div class="case-summary__grid">
+      <div class="case-summary__item">
+        <strong>Mi rol</strong>
+        <span>Lead Product Designer, trabajando junto al PM de growth</span>
+      </div>
+      <div class="case-summary__item">
+        <strong>Duración</strong>
+        <span>8 semanas, de la investigación al experimento en producción</span>
+      </div>
+      <div class="case-summary__item">
+        <strong>Resultado</strong>
+        <span>+31% de activación; el fraude subió solo 0,4 puntos</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CUERPO ============ -->
+  <article class="case-body">
+
+    <h2 class="reveal"><span class="case-num">01</span>El problema que parecía ser</h2>
+    <p class="reveal">El dato que llegó al equipo era simple: el 68% de los usuarios que descargaban la app nunca completaban el registro. El diagnóstico inicial de todos —incluido el mío— fue el obvio: "el onboarding es demasiado largo, hay que reducir pasos".</p>
+    <p class="reveal">Antes de aceptar ese encuadre, pedí una semana para mirar los datos de abandono paso por paso. Si el problema fuera la longitud, el abandono se repartiría de forma más o menos uniforme entre pantallas. No era así.</p>
+
+    <p class="pull reveal">El 71% del abandono se concentraba en una sola pantalla: la que pedía foto del documento de identidad.</p>
+
+    <h2 class="reveal"><span class="case-num">02</span>Reencuadrar: no es cuántos pasos, es cuándo</h2>
+    <p class="reveal">Entrevisté a 12 usuarios que habían abandonado. El patrón fue consistente: no les molestaba dar sus datos, les molestaba darlos <em>antes de haber visto nada</em>. La app les pedía un acto de confianza sin haberles dado ninguna razón para confiar.</p>
+    <p class="reveal">Eso convirtió el problema en una hipótesis falsable:</p>
+    <div class="decision-box reveal">
+      <strong>Hipótesis</strong>
+      <p>Si movemos la verificación de identidad después del primer momento de valor (explorar la app y simular una operación), la activación subirá al menos 15 puntos, aunque el costo sea verificar usuarios que ya están dentro.</p>
+    </div>
+
+    <h2 class="reveal"><span class="case-num">03</span>El trade-off que nadie quería tocar</h2>
+    <p class="reveal">La propuesta chocaba con el equipo de riesgo, con razón: dejar entrar usuarios sin verificar es dejar entrar potenciales defraudadores. Las alternativas sobre la mesa:</p>
+    <ul class="reveal">
+      <li><strong>Reducir pasos del formulario</strong> — descartada: los datos mostraban que el problema no era la longitud.</li>
+      <li><strong>Explicar mejor por qué pedimos el documento</strong> — la probamos como variante barata; mejoró solo 3 puntos.</li>
+      <li><strong>Verificación diferida con permisos limitados</strong> — el usuario entra, explora y simula operaciones, pero no puede mover dinero hasta verificarse.</li>
+    </ul>
+    <p class="reveal">La tercera opción era la más cara de construir y la más incómoda políticamente. También era la única que atacaba la causa raíz. Mi trabajo fue cuantificar el miedo: junto al equipo de riesgo modelamos el peor escenario de fraude y resultó ser un costo acotado y medible — mucho menor que el costo de perder al 68% de los usuarios en la puerta.</p>
+
+    <h2 class="reveal"><span class="case-num">04</span>Qué pasó (y qué me equivoqué)</h2>
+    <p class="reveal">Lanzamos como experimento A/B al 20% del tráfico durante 4 semanas. Resultados:</p>
+    <ul class="reveal">
+      <li><strong>Activación: +31%</strong> — el doble de lo que había prometido en la hipótesis.</li>
+      <li><strong>Fraude: +0,4 puntos</strong> — dentro del margen que el equipo de riesgo había aceptado.</li>
+      <li><strong>Lo que no vi venir:</strong> la tasa de verificación posterior fue más baja de lo esperado. Muchos usuarios se quedaban en el "modo exploración" sin verificarse nunca. Tuvimos que diseñar una segunda iteración de incentivos para cerrar ese ciclo.</li>
+    </ul>
+
+    <p class="pull reveal">La lección: resolver el embudo de entrada creó un embudo nuevo más adelante. Ninguna decisión de producto es gratis.</p>
+
+    <h2 class="reveal"><span class="case-num">05</span>Por qué este caso está en mi portfolio</h2>
+    <p class="reveal">No por el +31%. Está aquí porque muestra las tres cosas que creo que definen el buen trabajo de producto: cuestionar el encuadre inicial antes de diseñar, convertir un desacuerdo entre equipos en un trade-off cuantificado, y contar honestamente lo que salió distinto a lo planeado.</p>
+
+  </article>
+
+  <div class="case-nav">
+    <a href="index.html#casos" class="btn btn--ghost">← Volver a casos</a>
+    <a href="index.html#contacto" class="btn btn--dark">Hablemos de tu producto</a>
+  </div>
+
+  <footer class="footer">
+    <div class="footer__wordmark" aria-hidden="true">Santiago</div>
+    <p class="footer__legal">© 2026 Santiago Arraz — Diseñado pensando en voz alta.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
