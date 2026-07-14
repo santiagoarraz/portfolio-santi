@@ -438,7 +438,12 @@ em {
   margin-top: 40px;
   max-width: 520px;
 }
-.about__stats .fact { flex: 1; }
+.about__stats .fact {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 .about__photo-frame {
   border-radius: var(--radius);
   overflow: hidden;
