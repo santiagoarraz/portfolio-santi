@@ -81,7 +81,8 @@ em {
 /* ============ Hero ============ */
 .hero {
   position: relative;
-  max-width: var(--maxw);
+  /* A todo lo ancho para que el canvas de líneas cubra el viewport completo */
+  max-width: none;
   margin: 0 auto;
   padding: 140px 40px 100px;
   text-align: center;
@@ -238,8 +239,20 @@ em {
   background: var(--bg-alt);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+  padding-left: 0;
+  padding-right: 0;
 }
-.section--alt > * { max-width: var(--maxw); margin-left: auto; margin-right: auto; }
+/* Los hijos replican la caja de una sección normal (1200px con 40px de
+   padding lateral) para que todas las secciones compartan márgenes */
+.section--alt > * {
+  max-width: var(--maxw);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.section--alt > .section__head { max-width: var(--maxw); }
+.section--alt .section__sub { max-width: 640px; }
 .section__head { max-width: 640px; margin-bottom: 72px; }
 .section__eyebrow {
   display: block;
@@ -357,19 +370,30 @@ em {
 
 /* ============ Oferta ============ */
 .offer {
-  background: var(--ink);
-  color: var(--bg);
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--ink);
   border-radius: 28px;
   padding: 90px 40px;
   text-align: center;
 }
+.offer__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.offer > *:not(.offer__canvas) { position: relative; z-index: 1; }
 .offer__eyebrow {
   display: block;
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #8a8a82;
+  color: var(--ink-faint);
   margin-bottom: 22px;
 }
 .offer__title {
@@ -381,26 +405,19 @@ em {
 }
 .offer__sub {
   font-size: 19px;
-  color: #c9c9c1;
+  color: var(--ink-soft);
   max-width: 560px;
   margin: 0 auto 28px;
 }
 .offer__body {
   font-size: 16px;
-  color: #a3a39b;
+  color: var(--ink-soft);
   max-width: 640px;
   margin: 0 auto 44px;
 }
-.btn--light {
-  background: var(--bg);
-  color: var(--ink);
-  padding: 18px 36px;
-  font-size: 16px;
-}
-.btn--light:hover { background: #fff; }
 .offer__note {
   font-size: 13.5px;
-  color: #77776f;
+  color: var(--ink-faint);
   max-width: 520px;
   margin: 36px auto 0;
 }
@@ -415,6 +432,13 @@ em {
 .about__text p { color: var(--ink-soft); margin-bottom: 18px; max-width: 520px; }
 .about__text .section__title { margin-bottom: 28px; }
 .about__facts { display: flex; flex-direction: column; gap: 16px; }
+.about__stats {
+  display: flex;
+  gap: 16px;
+  margin-top: 40px;
+  max-width: 520px;
+}
+.about__stats .fact { flex: 1; }
 .about__photo-frame {
   border-radius: var(--radius);
   overflow: hidden;
@@ -631,6 +655,8 @@ em {
   .nav__links { display: none; }
   .hero { padding: 90px 24px 70px; }
   .section { padding: 90px 24px; }
+  .section--alt { padding-left: 0; padding-right: 0; }
+  .section--alt > * { padding-left: 24px; padding-right: 24px; }
   .manifesto, .contact { padding: 90px 24px; }
   .about { grid-template-columns: 1fr; gap: 48px; }
   .method__row { grid-template-columns: 1fr; gap: 12px; padding: 36px 4px; }
