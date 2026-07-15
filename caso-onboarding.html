@@ -43,11 +43,11 @@
       </div>
       <div class="case-summary__item">
         <strong>Duración</strong>
-        <span>4 semanas, desde la fase de research hasta cambios en producción</span>
+        <span>4 semanas</span>
       </div>
       <div class="case-summary__item">
         <strong>Resultado</strong>
-        <span>De 2.000 page views mensuales a 200.000 en el mes de despliegue</span>
+        <span>De 2.000 a 200.000 page views mensuales</span>
       </div>
     </div>
   </div>
@@ -56,9 +56,7 @@
   <article class="case-body">
 
     <h2 class="reveal"><span class="case-num">01</span>El problema</h2>
-    <p class="reveal">Tacter era una plataforma gaming UGC didáctico. Los usuarios encontraban contenido en varios canales de distribución, pero les era difícil encontrarlo dentro de la plataforma.</p>
-    <p class="reveal">Intentamos majorar "la discoverability" de varias formas: Filtros, Barra de búsqueda o cambios visuales entre otros. Incluso creamos una herramienta de apoyo llamada "Metacomps"</p>
-    <p class="reveal">Nada funcionó</p>
+    <p class="reveal">Tacter era una plataforma gaming UGC didáctico. Los usuarios llegaban al contenido de Tacter a través de Google o Reddit, pero les era difícil encontrarlo dentro de la plataforma.</p>
 
     <!-- Ilustración: el 90% del consumo ocurría fuera de Tacter -->
     <figure class="case-figure reveal">
@@ -152,21 +150,15 @@
 
     <p class="pull reveal">El 71% del abandono se concentraba en una sola pantalla: la que pedía foto del documento de identidad.</p>
 
-    <h2 class="reveal"><span class="case-num">02</span>Estudio de mercado y audiencia actual</h2>
-    <p class="reveal">Entrevisté a 12 usuarios con distintos perfiles (Power, Casual y Churned). El patrón fue consistente:  <em>no sabían qué guía seguir para ganar</em>. </p>
-    <p class="reveal">Teníamos las mejores y mayor cantidad de guías. Nuestra virtud se vilvió un problema.</p>
-    <div class="decision-box reveal">
-      <strong>Hipótesis</strong>
-      <p>Si movemos la verificación de identidad después del primer momento de valor (explorar la app y simular una operación), la activación subirá al menos 15 puntos, aunque el costo sea verificar usuarios que ya están dentro.</p>
-    </div>
+    <h2 class="reveal"><span class="case-num">02</span>Estudio de mercado y audiencia</h2>
+    <p class="reveal">Investigué a toda nuestra competencia para analizar cómo solucionaron este problema. </p>
+    <p class="reveal">Además, entrevisté a 12 usuarios con distintos perfiles (Power, Casual y Churned). El patrón fue consistente: Les abrumaba la cantidad de opciones,<em> y no sabían cuál era mejor o peor</em>.</p>
 
     <!-- Bloques ilustrados del estudio (texto placeholder; imágenes en /img) -->
     <div class="case-feature reveal">
       <div class="case-feature__text">
-        <h3>Tacter home</h3>
-        <p class="type-on-view">El consumo se basaba en un feed de contenido con filtros y sorting.
-          <p>La enorme cantidad de contenido dificultaba el consumo.</p>
-        </p>
+        <h3>Issue: Feed</h3>
+        <p class="type-on-view">El consumo se basaba en un feed vertical de contenido. El usuario podía usar filtros y sorting, pero se sentían abrumados.</p>
       </div>
       <div class="case-feature__frame">
         <div class="case-feature__inner">
@@ -177,8 +169,8 @@
 
     <div class="case-feature reveal">
       <div class="case-feature__text">
-        <h3>Metacomps v1</h3>
-        <p class="type-on-view">En un pasado ya intentamos implementar una solucion similar sin mucho éxito. El tráfico de esta feature era de unas 2.000 page views mensuales.</p>
+        <h3>Metacomps V.1</h3>
+        <p class="type-on-view">En un pasado ya intentamos implementar una solucion similar sin éxito. El tráfico de esta feature era de unas 2.000 page views mensuales.</p>
       </div>
       <div class="case-feature__frame">
         <div class="case-feature__inner">
@@ -187,27 +179,35 @@
       </div>
     </div>
 
-    <h2 class="reveal"><span class="case-num">03</span>El trade-off que nadie quería tocar</h2>
-    <p class="reveal">La propuesta chocaba con el equipo de riesgo, con razón: dejar entrar usuarios sin verificar es dejar entrar potenciales defraudadores. Las alternativas sobre la mesa:</p>
-    <ul class="reveal">
-      <li><strong>Reducir pasos del formulario</strong> — descartada: los datos mostraban que el problema no era la longitud.</li>
-      <li><strong>Explicar mejor por qué pedimos el documento</strong> — la probamos como variante barata; mejoró solo 3 puntos.</li>
-      <li><strong>Verificación diferida con permisos limitados</strong> — el usuario entra, explora y simula operaciones, pero no puede mover dinero hasta verificarse.</li>
-    </ul>
-    <p class="reveal">La tercera opción era la más cara de construir y la más incómoda políticamente. También era la única que atacaba la causa raíz. Mi trabajo fue cuantificar el miedo: junto al equipo de riesgo modelamos el peor escenario de fraude y resultó ser un costo acotado y medible — mucho menor que el costo de perder al 68% de los usuarios en la puerta.</p>
+      <div class="decision-box reveal">
+      <strong>Hipótesis</strong>
+      <p>Resolver el sistema de navegación y el algoritmo era prioritario, pero complejo. Podíamos tener un gran impacto en nuestros usuarios si éramos capaces de fusionar nuestro contenido con los estándares de consumo dentro del nicho del juego TeamFight Tactics</p>
+    </div>
 
-    <h2 class="reveal"><span class="case-num">04</span>Qué pasó (y qué me equivoqué)</h2>
-    <p class="reveal">Lanzamos como experimento A/B al 20% del tráfico durante 4 semanas. Resultados:</p>
+    <h2 class="reveal"><span class="case-num">03</span>Hipótesis y trade-off</h2>
+    <p class="reveal">Mi hipótesis fue que Metacomps V.1 no se ajustaba a los estándares de diseño dentro del nicho del juego Teamfight Tactics. Además, la navegación y las guías recomendadas no eran correspondían a lo que buscaba el usuario. Puse foco en tres elementos:</p>
     <ul class="reveal">
-      <li><strong>Activación: +31%</strong> — el doble de lo que había prometido en la hipótesis.</li>
-      <li><strong>Fraude: +0,4 puntos</strong> — dentro del margen que el equipo de riesgo había aceptado.</li>
-      <li><strong>Lo que no vi venir:</strong> la tasa de verificación posterior fue más baja de lo esperado. Muchos usuarios se quedaban en el "modo exploración" sin verificarse nunca. Tuvimos que diseñar una segunda iteración de incentivos para cerrar ese ciclo.</li>
+      <li><strong>Presentar una UI similar a la de nuestros competidores</strong>: Todos nuestros competidores presentaban una interfaz de consumo similar.</li>
+      <li><strong>Agrupación de contenido</strong> Nuestra competencia solo tenía 10 o 20 guías, mientras que nosotros teníamos entre 100 y 200. Tras hablar con expertos jugadores como Frobei o Sologesang, establecimos una serie de parámetros comunes. </li>
+      <li><strong>Reactivación de una colaboración clave</strong> No teníamos la tecnología suficiente para obtener los datos que necesitábamos, así que nos asociamos con uno de nuestros competidores, MetaTFT.</li>
     </ul>
 
-    <p class="pull reveal">La lección: resolver el embudo de entrada creó un embudo nuevo más adelante. Ninguna decisión de producto es gratis.</p>
+    <h2 class="reveal"><span class="case-num">04</span>Rediseño</h2>
+    <p class="reveal">Después de trabajar los tres puntos principales, implementamos Metacomps V.2. Resultados:</p>
+    <ul class="reveal">
+      <li><strong>Page views: +200.000</strong> - el doble de lo que había prometido en la hipótesis.</li>
+      <li><strong>Tiempo medio de sesión: 16 minutos</strong>  dentro del rango estimado.</li>
+      <li><strong>Lo que no vi venir</strong> los usuarios compartieron de forma proactiva un feedback muy favorable.</li>
+    </ul>
+
+    <figure class="case-image reveal">
+      <img src="img/caso-tacter-03.png" alt="Interfaz rediseñada de Metacomps V.2">
+    </figure>
+
+    <p class="pull reveal">Cada nicho presenta unos estándares propios definidos por contexto, productos existentes o comportamientos. No solucionamos el problema principal de "Discoverability" pero tuvimos un impacto real</p>
 
     <h2 class="reveal"><span class="case-num">05</span>Por qué este caso está en mi portfolio</h2>
-    <p class="reveal">No por el +31%. Está aquí porque muestra las tres cosas que creo que definen el buen trabajo de producto: cuestionar el encuadre inicial antes de diseñar, convertir un desacuerdo entre equipos en un trade-off cuantificado, y contar honestamente lo que salió distinto a lo planeado.</p>
+    <p class="reveal">No por las page views o por el tiempo de sesion. Está aquí porque muestra las tres cosas que creo que definen el buen trabajo de producto: cuestionar el encuadre inicial antes de diseñar, conocer a tu audiencia y tu competencia como principal fuente de información, y contar honestamente que una feature fallida (Metacomps v.1) puede convertirse en una palanca de crecimiento.</p>
 
   </article>
 

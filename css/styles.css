@@ -681,6 +681,20 @@ em {
   color: var(--ink-faint);
 }
 
+/* Imagen a ancho completo dentro de un caso */
+.case-image {
+  margin: 44px 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fff;
+}
+.case-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* Caret reutilizable para escritura al hacer scroll */
 .type-caret {
   display: inline-block;
