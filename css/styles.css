@@ -635,6 +635,72 @@ em {
 }
 .decision-box p { margin-bottom: 0; color: var(--ink); }
 
+/* ============ Bloques ilustrados de caso ============ */
+.case-feature {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 48px;
+  align-items: center;
+  margin: 64px 0;
+}
+.case-feature__text h3 {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  min-height: 1.35em; /* reserva la línea mientras se escribe */
+}
+.case-feature__text p {
+  color: var(--ink-soft);
+  font-size: 15.5px;
+  margin: 0;
+}
+.case-feature__inner {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+.case-feature__inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Hueco elegante mientras no exista la imagen */
+.case-feature__inner.is-missing { position: relative; }
+.case-feature__inner.is-missing img { display: none; }
+.case-feature__inner.is-missing::after {
+  content: "Imagen — súbela a /img";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  color: var(--ink-faint);
+}
+
+/* Caret reutilizable para escritura al hacer scroll */
+.type-caret {
+  display: inline-block;
+  width: 3px;
+  height: 0.72em;
+  margin-left: 0.1em;
+  border-radius: 2px;
+  background: #ec4899;
+  animation: caret-color 9s linear infinite, caret-blink 1.1s steps(2, start) infinite;
+}
+.type-caret.is-done {
+  animation: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+@media (max-width: 860px) {
+  .case-feature { grid-template-columns: 1fr; gap: 24px; }
+}
+
 /* ============ Figura ilustrativa de caso ============ */
 .case-figure {
   margin: 44px 0;

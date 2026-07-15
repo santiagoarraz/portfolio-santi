@@ -220,6 +220,53 @@ if (reducedMotion || !("IntersectionObserver" in window)) {
 })();
 
 // ============================================================
+// Escritura a máquina al entrar en pantalla (.type-on-view)
+// ============================================================
+(() => {
+  const els = document.querySelectorAll(".type-on-view");
+  if (!els.length) return;
+  // Sin animaciones: el texto se queda tal cual está en el HTML
+  if (reducedMotion || !("IntersectionObserver" in window)) return;
+
+  els.forEach((el) => {
+    el.dataset.text = el.textContent;
+    // Reserva la altura del texto completo para que el layout no salte
+    el.style.minHeight = el.offsetHeight + "px";
+    el.textContent = "";
+  });
+
+  const typeIO = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        typeIO.unobserve(entry.target);
+        const el = entry.target;
+        const text = el.dataset.text;
+        const caret = document.createElement("span");
+        caret.className = "type-caret";
+        caret.setAttribute("aria-hidden", "true");
+        el.appendChild(caret);
+        // Cadencia más rápida en textos largos para no hacer esperar
+        const base = text.length > 80 ? 12 : 40;
+        const jitter = text.length > 80 ? 22 : 55;
+        let i = 0;
+        (function step() {
+          if (i < text.length) {
+            caret.before(document.createTextNode(text[i]));
+            i++;
+            setTimeout(step, base + Math.random() * jitter);
+          } else {
+            setTimeout(() => caret.classList.add("is-done"), 1500);
+          }
+        })();
+      });
+    },
+    { threshold: 0.9 }
+  );
+  els.forEach((el) => typeIO.observe(el));
+})();
+
+// ============================================================
 // Oferta: campo de líneas flotantes que ciclan color.
 // Al hacer hover, las cercanas se alinean apuntando al CTA
 // con un color fijo; las lejanas siguen dispersas.
