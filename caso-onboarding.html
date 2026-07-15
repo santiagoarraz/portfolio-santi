@@ -60,6 +60,96 @@
     <p class="reveal">El dato que llegó al equipo era simple: el 68% de los usuarios que descargaban la app nunca completaban el registro. El diagnóstico inicial de todos —incluido el mío— fue el obvio: "el onboarding es demasiado largo, hay que reducir pasos".</p>
     <p class="reveal">Antes de aceptar ese encuadre, pedí una semana para mirar los datos de abandono paso por paso. Si el problema fuera la longitud, el abandono se repartiría de forma más o menos uniforme entre pantallas. No era así.</p>
 
+    <!-- Ilustración: el 90% del consumo ocurría fuera de Tacter -->
+    <figure class="case-figure reveal">
+      <svg viewBox="0 0 780 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama: todo el tráfico acababa en el contenido de Tacter, pero el 90% pasaba antes por fuentes externas — Google la mayor, Reddit la segunda">
+        <!-- Etapa 1: usuarios → plataformas -->
+        <path class="cf-path" d="M160 215 C 240 215, 250 48, 330 48"/>
+        <path class="cf-path" d="M160 215 C 240 215, 250 108, 330 108"/>
+        <path class="cf-path" d="M160 215 C 240 215, 250 168, 330 168"/>
+        <path class="cf-path" d="M160 215 C 240 215, 250 228, 330 228"/>
+        <path class="cf-path" d="M160 215 C 240 215, 250 288, 330 288"/>
+        <path class="cf-path" d="M160 215 C 240 215, 250 385, 330 385"/>
+        <!-- Etapa 2: plataformas → contenido en Tacter -->
+        <path class="cf-path" d="M450 48 C 530 48, 545 210, 612 210"/>
+        <path class="cf-path" d="M450 108 C 530 108, 545 212, 612 212"/>
+        <path class="cf-path" d="M450 168 C 530 168, 545 214, 612 214"/>
+        <path class="cf-path" d="M450 228 C 530 228, 545 217, 612 217"/>
+        <path class="cf-path" d="M450 288 C 530 288, 545 220, 612 220"/>
+        <path class="cf-path" d="M450 385 C 530 385, 545 226, 612 226"/>
+
+        <!-- Origen -->
+        <rect class="cf-node" x="20" y="195" width="140" height="40" rx="20"/>
+        <text class="cf-node-label" x="90" y="220" text-anchor="middle">Usuarios del nicho</text>
+
+        <!-- Plataformas intermedias -->
+        <rect class="cf-node" x="330" y="30" width="120" height="36" rx="18"/>
+        <text class="cf-node-label" x="390" y="53" text-anchor="middle">Google</text>
+        <rect class="cf-node" x="330" y="90" width="120" height="36" rx="18"/>
+        <text class="cf-node-label" x="390" y="113" text-anchor="middle">YouTube</text>
+        <rect class="cf-node" x="330" y="150" width="120" height="36" rx="18"/>
+        <text class="cf-node-label" x="390" y="173" text-anchor="middle">Discord</text>
+        <rect class="cf-node" x="330" y="210" width="120" height="36" rx="18"/>
+        <text class="cf-node-label" x="390" y="233" text-anchor="middle">X / Twitter</text>
+        <rect class="cf-node" x="330" y="270" width="120" height="36" rx="18"/>
+        <text class="cf-node-label" x="390" y="293" text-anchor="middle">Reddit</text>
+        <rect class="cf-node cf-tacter" x="330" y="367" width="120" height="36" rx="18"/>
+        <text class="cf-node-label cf-tacter-label" x="390" y="390" text-anchor="middle">Tacter</text>
+
+        <!-- Destino final -->
+        <rect class="cf-final" x="612" y="193" width="158" height="44" rx="22"/>
+        <text class="cf-final-label" x="691" y="220" text-anchor="middle">Contenido en Tacter</text>
+
+        <!-- Cifras -->
+        <text class="cf-pct" x="691" y="140" font-size="34" text-anchor="middle">90%</text>
+        <text class="cf-pct-label" x="691" y="160" text-anchor="middle">vía fuentes externas</text>
+        <text class="cf-pct" x="691" y="292" font-size="24" text-anchor="middle">10%</text>
+        <text class="cf-pct-label" x="691" y="310" text-anchor="middle">directo en Tacter</text>
+
+        <!-- Etapa 1 · Google: la ruta con más tráfico -->
+        <circle class="cf-dot" r="3.5" fill="#ec4899" style="--p: path('M160 215 C 240 215, 250 48, 330 48'); --d: 4.6s; --t: 0s"/>
+        <circle class="cf-dot" r="3.5" fill="#8b5cf6" style="--p: path('M160 215 C 240 215, 250 48, 330 48'); --d: 4.6s; --t: -0.9s"/>
+        <circle class="cf-dot" r="3.5" fill="#2b59ff" style="--p: path('M160 215 C 240 215, 250 48, 330 48'); --d: 4.6s; --t: -1.8s"/>
+        <circle class="cf-dot" r="3.5" fill="#ec4899" style="--p: path('M160 215 C 240 215, 250 48, 330 48'); --d: 4.6s; --t: -2.7s"/>
+        <circle class="cf-dot" r="3.5" fill="#8b5cf6" style="--p: path('M160 215 C 240 215, 250 48, 330 48'); --d: 4.6s; --t: -3.6s"/>
+        <!-- Etapa 1 · YouTube -->
+        <circle class="cf-dot" r="3.5" fill="#2b59ff" style="--p: path('M160 215 C 240 215, 250 108, 330 108'); --d: 5.6s; --t: -0.5s"/>
+        <circle class="cf-dot" r="3.5" fill="#ec4899" style="--p: path('M160 215 C 240 215, 250 108, 330 108'); --d: 5.6s; --t: -3.3s"/>
+        <!-- Etapa 1 · Discord -->
+        <circle class="cf-dot" r="3.5" fill="#8b5cf6" style="--p: path('M160 215 C 240 215, 250 168, 330 168'); --d: 4.9s; --t: -1.2s"/>
+        <circle class="cf-dot" r="3.5" fill="#2b59ff" style="--p: path('M160 215 C 240 215, 250 168, 330 168'); --d: 4.9s; --t: -3.7s"/>
+        <!-- Etapa 1 · X / Twitter -->
+        <circle class="cf-dot" r="3.5" fill="#ec4899" style="--p: path('M160 215 C 240 215, 250 228, 330 228'); --d: 5.4s; --t: -0.8s"/>
+        <circle class="cf-dot" r="3.5" fill="#8b5cf6" style="--p: path('M160 215 C 240 215, 250 228, 330 228'); --d: 5.4s; --t: -3.5s"/>
+        <!-- Etapa 1 · Reddit: la segunda con más tráfico -->
+        <circle class="cf-dot" r="3.5" fill="#2b59ff" style="--p: path('M160 215 C 240 215, 250 288, 330 288'); --d: 5.2s; --t: -0.3s"/>
+        <circle class="cf-dot" r="3.5" fill="#ec4899" style="--p: path('M160 215 C 240 215, 250 288, 330 288'); --d: 5.2s; --t: -1.6s"/>
+        <circle class="cf-dot" r="3.5" fill="#8b5cf6" style="--p: path('M160 215 C 240 215, 250 288, 330 288'); --d: 5.2s; --t: -2.9s"/>
+        <circle class="cf-dot" r="3.5" fill="#2b59ff" style="--p: path('M160 215 C 240 215, 250 288, 330 288'); --d: 5.2s; --t: -4.2s"/>
+        <!-- Etapa 1 · Tacter directo (10%) -->
+        <circle class="cf-dot" r="3.5" fill="#2b59ff" style="--p: path('M160 215 C 240 215, 250 385, 330 385'); --d: 7s; --t: -2s"/>
+
+        <!-- Etapa 2 · Google → contenido -->
+        <circle class="cf-dot" r="3.5" fill="#8b5cf6" style="--p: path('M450 48 C 530 48, 545 210, 612 210'); --d: 4.2s; --t: -0.2s"/>
+        <circle class="cf-dot" r="3.5" fill="#2b59ff" style="--p: path('M450 48 C 530 48, 545 210, 612 210'); --d: 4.2s; --t: -1.3s"/>
+        <circle class="cf-dot" r="3.5" fill="#ec4899" style="--p: path('M450 48 C 530 48, 545 210, 612 210'); --d: 4.2s; --t: -2.4s"/>
+        <circle class="cf-dot" r="3.5" fill="#8b5cf6" style="--p: path('M450 48 C 530 48, 545 210, 612 210'); --d: 4.2s; --t: -3.5s"/>
+        <!-- Etapa 2 · YouTube → contenido -->
+        <circle class="cf-dot" r="3.5" fill="#ec4899" style="--p: path('M450 108 C 530 108, 545 212, 612 212'); --d: 5s; --t: -1.5s"/>
+        <!-- Etapa 2 · Discord → contenido -->
+        <circle class="cf-dot" r="3.5" fill="#2b59ff" style="--p: path('M450 168 C 530 168, 545 214, 612 214'); --d: 5s; --t: -2.8s"/>
+        <!-- Etapa 2 · X → contenido -->
+        <circle class="cf-dot" r="3.5" fill="#8b5cf6" style="--p: path('M450 228 C 530 228, 545 217, 612 217'); --d: 5.2s; --t: -0.9s"/>
+        <!-- Etapa 2 · Reddit → contenido -->
+        <circle class="cf-dot" r="3.5" fill="#ec4899" style="--p: path('M450 288 C 530 288, 545 220, 612 220'); --d: 4.8s; --t: -0.6s"/>
+        <circle class="cf-dot" r="3.5" fill="#2b59ff" style="--p: path('M450 288 C 530 288, 545 220, 612 220'); --d: 4.8s; --t: -2.2s"/>
+        <circle class="cf-dot" r="3.5" fill="#8b5cf6" style="--p: path('M450 288 C 530 288, 545 220, 612 220'); --d: 4.8s; --t: -3.8s"/>
+        <!-- Etapa 2 · Tacter → contenido -->
+        <circle class="cf-dot" r="3.5" fill="#2b59ff" style="--p: path('M450 385 C 530 385, 545 226, 612 226'); --d: 6s; --t: -3s"/>
+      </svg>
+      <figcaption>Todo el tráfico acababa en el contenido de Tacter — pero el 90% pasaba antes por fuentes externas, con Google y Reddit a la cabeza.</figcaption>
+    </figure>
+
     <p class="pull reveal">El 71% del abandono se concentraba en una sola pantalla: la que pedía foto del documento de identidad.</p>
 
     <h2 class="reveal"><span class="case-num">02</span>Reencuadrar: no es cuántos pasos, es cuándo</h2>

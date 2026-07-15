@@ -634,6 +634,77 @@ em {
   margin-bottom: 12px;
 }
 .decision-box p { margin-bottom: 0; color: var(--ink); }
+
+/* ============ Figura ilustrativa de caso ============ */
+.case-figure {
+  margin: 44px 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px 24px 20px;
+}
+.case-figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.case-figure figcaption {
+  margin-top: 14px;
+  font-size: 13.5px;
+  color: var(--ink-faint);
+  text-align: center;
+}
+.cf-path {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1;
+}
+.cf-path--leak { stroke-dasharray: 3 5; }
+.cf-node {
+  fill: var(--bg);
+  stroke: #d9d9d0;
+}
+.cf-node-label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  fill: var(--ink-soft);
+}
+.cf-tacter { stroke: var(--accent); stroke-width: 1.5; }
+.cf-tacter-label { fill: var(--accent); font-weight: 600; }
+.cf-final { fill: var(--ink); }
+.cf-final-label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  fill: #fafaf8;
+}
+.cf-pct {
+  font-family: var(--font-serif);
+  font-style: italic;
+  fill: var(--ink);
+}
+.cf-pct-label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  fill: var(--ink-faint);
+}
+.cf-dot {
+  offset-path: var(--p);
+  offset-rotate: 0deg;
+  animation: cf-flow var(--d, 5s) linear infinite;
+  animation-delay: var(--t, 0s);
+}
+@keyframes cf-flow {
+  0% { offset-distance: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { offset-distance: 100%; opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cf-dot { animation: none; offset-distance: 55%; opacity: 0.6; }
+}
+
 .case-nav {
   display: flex;
   justify-content: space-between;
