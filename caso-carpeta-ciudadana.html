@@ -59,6 +59,134 @@
     <p class="reveal">La administración española necesitaba integrar 14 trámites distintos, cada uno alojado en un servidor diferente y con su propio proceso de solicitud.</p>
     <p class="reveal">No había ningún sistema común que unificara la experiencia.</p>
 
+    <!-- Ilustración: 14 trámites aislados, sin sistema común en el centro -->
+    <figure class="case-figure reveal">
+      <svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama: 14 trámites aislados, cada uno con su propio servidor y proceso, y en el centro un hueco vacío que representa la falta de un sistema común">
+
+        <!-- Hueco central: el sistema común que no existía -->
+        <g class="cf-ghost">
+          <circle cx="400" cy="240" r="86" fill="none" stroke="#d9d9d0" stroke-dasharray="5 6"/>
+          <text class="cf-ghost-label" x="400" y="235" text-anchor="middle">Sin sistema</text>
+          <text class="cf-ghost-label" x="400" y="263" text-anchor="middle">común</text>
+        </g>
+
+        <!-- 14 islas: servidor propio → proceso propio → trámite -->
+        <g>
+          <rect class="cf-node" x="337" y="42" width="18" height="26" rx="3"/>
+          <line class="cf-server-line" x1="341" y1="51" x2="351" y2="51"/><line class="cf-server-line" x1="341" y1="57" x2="351" y2="57"/>
+          <path class="cf-path" d="M355 55 L385 55"/>
+          <rect class="cf-node" x="385" y="42" width="78" height="26" rx="13"/>
+          <text class="cf-node-label" x="424" y="59" font-size="11" text-anchor="middle">Trámite 01</text>
+          <circle class="cf-shuttle" r="2.8" fill="#ec4899" style="--p: path('M355 55 L385 55'); --d: 1.5s; --t: 0s"/>
+        </g>
+        <g>
+          <rect class="cf-node" x="461" y="60" width="18" height="26" rx="3"/>
+          <line class="cf-server-line" x1="465" y1="69" x2="475" y2="69"/><line class="cf-server-line" x1="465" y1="75" x2="475" y2="75"/>
+          <path class="cf-path" d="M479 73 L509 73"/>
+          <rect class="cf-node" x="509" y="60" width="78" height="26" rx="13"/>
+          <text class="cf-node-label" x="548" y="77" font-size="11" text-anchor="middle">Trámite 02</text>
+          <circle class="cf-shuttle" r="2.8" fill="#8b5cf6" style="--p: path('M479 73 L509 73'); --d: 1.8s; --t: -0.4s"/>
+        </g>
+        <g>
+          <rect class="cf-node" x="560" y="112" width="18" height="26" rx="3"/>
+          <line class="cf-server-line" x1="564" y1="121" x2="574" y2="121"/><line class="cf-server-line" x1="564" y1="127" x2="574" y2="127"/>
+          <path class="cf-path" d="M578 125 L608 125"/>
+          <rect class="cf-node" x="608" y="112" width="78" height="26" rx="13"/>
+          <text class="cf-node-label" x="647" y="129" font-size="11" text-anchor="middle">Trámite 03</text>
+          <circle class="cf-shuttle" r="2.8" fill="#2b59ff" style="--p: path('M578 125 L608 125'); --d: 1.6s; --t: -0.9s"/>
+        </g>
+        <g>
+          <rect class="cf-node" x="615" y="186" width="18" height="26" rx="3"/>
+          <line class="cf-server-line" x1="619" y1="195" x2="629" y2="195"/><line class="cf-server-line" x1="619" y1="201" x2="629" y2="201"/>
+          <path class="cf-path" d="M633 199 L663 199"/>
+          <rect class="cf-node" x="663" y="186" width="78" height="26" rx="13"/>
+          <text class="cf-node-label" x="702" y="203" font-size="11" text-anchor="middle">Trámite 04</text>
+          <circle class="cf-shuttle" r="2.8" fill="#ec4899" style="--p: path('M633 199 L663 199'); --d: 1.9s; --t: -0.2s"/>
+        </g>
+        <g>
+          <rect class="cf-node" x="615" y="268" width="18" height="26" rx="3"/>
+          <line class="cf-server-line" x1="619" y1="277" x2="629" y2="277"/><line class="cf-server-line" x1="619" y1="283" x2="629" y2="283"/>
+          <path class="cf-path" d="M633 281 L663 281"/>
+          <rect class="cf-node" x="663" y="268" width="78" height="26" rx="13"/>
+          <text class="cf-node-label" x="702" y="285" font-size="11" text-anchor="middle">Trámite 05</text>
+          <circle class="cf-shuttle" r="2.8" fill="#8b5cf6" style="--p: path('M633 281 L663 281'); --d: 1.5s; --t: -1.1s"/>
+        </g>
+        <g>
+          <rect class="cf-node" x="560" y="342" width="18" height="26" rx="3"/>
+          <line class="cf-server-line" x1="564" y1="351" x2="574" y2="351"/><line class="cf-server-line" x1="564" y1="357" x2="574" y2="357"/>
+          <path class="cf-path" d="M578 355 L608 355"/>
+          <rect class="cf-node" x="608" y="342" width="78" height="26" rx="13"/>
+          <text class="cf-node-label" x="647" y="359" font-size="11" text-anchor="middle">Trámite 06</text>
+          <circle class="cf-shuttle" r="2.8" fill="#2b59ff" style="--p: path('M578 355 L608 355'); --d: 1.7s; --t: -0.6s"/>
+        </g>
+        <g>
+          <rect class="cf-node" x="461" y="394" width="18" height="26" rx="3"/>
+          <line class="cf-server-line" x1="465" y1="403" x2="475" y2="403"/><line class="cf-server-line" x1="465" y1="409" x2="475" y2="409"/>
+          <path class="cf-path" d="M479 407 L509 407"/>
+          <rect class="cf-node" x="509" y="394" width="78" height="26" rx="13"/>
+          <text class="cf-node-label" x="548" y="411" font-size="11" text-anchor="middle">Trámite 07</text>
+          <circle class="cf-shuttle" r="2.8" fill="#ec4899" style="--p: path('M479 407 L509 407'); --d: 1.6s; --t: -1.3s"/>
+        </g>
+        <g>
+          <rect class="cf-node" x="337" y="412" width="18" height="26" rx="3"/>
+          <line class="cf-server-line" x1="341" y1="421" x2="351" y2="421"/><line class="cf-server-line" x1="341" y1="427" x2="351" y2="427"/>
+          <path class="cf-path" d="M355 425 L385 425"/>
+          <rect class="cf-node" x="385" y="412" width="78" height="26" rx="13"/>
+          <text class="cf-node-label" x="424" y="429" font-size="11" text-anchor="middle">Trámite 08</text>
+          <circle class="cf-shuttle" r="2.8" fill="#8b5cf6" style="--p: path('M355 425 L385 425'); --d: 1.8s; --t: -0.8s"/>
+        </g>
+        <g>
+          <rect class="cf-node" x="213" y="394" width="18" height="26" rx="3"/>
+          <line class="cf-server-line" x1="217" y1="403" x2="227" y2="403"/><line class="cf-server-line" x1="217" y1="409" x2="227" y2="409"/>
+          <path class="cf-path" d="M231 407 L261 407"/>
+          <rect class="cf-node" x="261" y="394" width="78" height="26" rx="13"/>
+          <text class="cf-node-label" x="300" y="411" font-size="11" text-anchor="middle">Trámite 09</text>
+          <circle class="cf-shuttle" r="2.8" fill="#2b59ff" style="--p: path('M231 407 L261 407'); --d: 1.5s; --t: -0.3s"/>
+        </g>
+        <g>
+          <rect class="cf-node" x="114" y="342" width="18" height="26" rx="3"/>
+          <line class="cf-server-line" x1="118" y1="351" x2="128" y2="351"/><line class="cf-server-line" x1="118" y1="357" x2="128" y2="357"/>
+          <path class="cf-path" d="M132 355 L162 355"/>
+          <rect class="cf-node" x="162" y="342" width="78" height="26" rx="13"/>
+          <text class="cf-node-label" x="201" y="359" font-size="11" text-anchor="middle">Trámite 10</text>
+          <circle class="cf-shuttle" r="2.8" fill="#ec4899" style="--p: path('M132 355 L162 355'); --d: 1.7s; --t: -1s"/>
+        </g>
+        <g>
+          <rect class="cf-node" x="59" y="268" width="18" height="26" rx="3"/>
+          <line class="cf-server-line" x1="63" y1="277" x2="73" y2="277"/><line class="cf-server-line" x1="63" y1="283" x2="73" y2="283"/>
+          <path class="cf-path" d="M77 281 L107 281"/>
+          <rect class="cf-node" x="107" y="268" width="78" height="26" rx="13"/>
+          <text class="cf-node-label" x="146" y="285" font-size="11" text-anchor="middle">Trámite 11</text>
+          <circle class="cf-shuttle" r="2.8" fill="#8b5cf6" style="--p: path('M77 281 L107 281'); --d: 1.6s; --t: -0.5s"/>
+        </g>
+        <g>
+          <rect class="cf-node" x="59" y="186" width="18" height="26" rx="3"/>
+          <line class="cf-server-line" x1="63" y1="195" x2="73" y2="195"/><line class="cf-server-line" x1="63" y1="201" x2="73" y2="201"/>
+          <path class="cf-path" d="M77 199 L107 199"/>
+          <rect class="cf-node" x="107" y="186" width="78" height="26" rx="13"/>
+          <text class="cf-node-label" x="146" y="203" font-size="11" text-anchor="middle">Trámite 12</text>
+          <circle class="cf-shuttle" r="2.8" fill="#2b59ff" style="--p: path('M77 199 L107 199'); --d: 1.9s; --t: -1.2s"/>
+        </g>
+        <g>
+          <rect class="cf-node" x="114" y="112" width="18" height="26" rx="3"/>
+          <line class="cf-server-line" x1="118" y1="121" x2="128" y2="121"/><line class="cf-server-line" x1="118" y1="127" x2="128" y2="127"/>
+          <path class="cf-path" d="M132 125 L162 125"/>
+          <rect class="cf-node" x="162" y="112" width="78" height="26" rx="13"/>
+          <text class="cf-node-label" x="201" y="129" font-size="11" text-anchor="middle">Trámite 13</text>
+          <circle class="cf-shuttle" r="2.8" fill="#ec4899" style="--p: path('M132 125 L162 125'); --d: 1.5s; --t: -0.7s"/>
+        </g>
+        <g>
+          <rect class="cf-node" x="213" y="60" width="18" height="26" rx="3"/>
+          <line class="cf-server-line" x1="217" y1="69" x2="227" y2="69"/><line class="cf-server-line" x1="217" y1="75" x2="227" y2="75"/>
+          <path class="cf-path" d="M231 73 L261 73"/>
+          <rect class="cf-node" x="261" y="60" width="78" height="26" rx="13"/>
+          <text class="cf-node-label" x="300" y="77" font-size="11" text-anchor="middle">Trámite 14</text>
+          <circle class="cf-shuttle" r="2.8" fill="#8b5cf6" style="--p: path('M231 73 L261 73'); --d: 1.8s; --t: -1.4s"/>
+        </g>
+      </svg>
+      <figcaption>14 trámites, cada uno en su propio servidor y con su propio proceso de solicitud — y en el centro, ningún sistema común.</figcaption>
+    </figure>
+
     <p class="pull reveal">Reunir todos los trámites en una app no aportaría valor si antes no se simplificaban y estandarizaban.</p>
 
     <h2 class="reveal"><span class="case-num">02</span>Estudio de los trámites y del ciudadano</h2>

@@ -781,8 +781,40 @@ em {
   88% { opacity: 1; }
   100% { offset-distance: 100%; opacity: 0; }
 }
+/* Detalle de los servidores (ranuras) */
+.cf-server-line {
+  stroke: #d9d9d0;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+/* Punto lanzadera: va y vuelve por su proceso aislado */
+.cf-shuttle {
+  offset-path: var(--p);
+  offset-rotate: 0deg;
+  animation: cf-shuttle var(--d, 1.6s) ease-in-out var(--t, 0s) infinite alternate;
+}
+@keyframes cf-shuttle {
+  from { offset-distance: 0%; }
+  to { offset-distance: 100%; }
+}
+/* Hueco central: el sistema común que no existía */
+.cf-ghost {
+  animation: cf-pulse 4s ease-in-out infinite;
+}
+.cf-ghost-label {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 24px;
+  fill: var(--ink-faint);
+}
+@keyframes cf-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
 @media (prefers-reduced-motion: reduce) {
   .cf-dot { animation: none; offset-distance: 55%; opacity: 0.6; }
+  .cf-shuttle { animation: none; offset-distance: 50%; }
+  .cf-ghost { animation: none; }
 }
 
 .case-nav {
